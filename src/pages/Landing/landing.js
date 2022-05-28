@@ -4,6 +4,7 @@ import "./landing.css"
 import "./landing.css"
 import logo from "../../assets/logo.svg"
 import background from "../../assets/background.svg"
+import line from "../../assets/line.svg"
 
 
 const landing = () => {
@@ -15,7 +16,7 @@ const landing = () => {
           <div className = "landing">
             <div className="headings">
             <h1>Slouch Analytics</h1>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim, dictumst morbi mauris rhoncus a.</h4>
+            <h4>Monitors and identifies if you are slouching. SlouchAnalytics will send a notification to alert you.</h4>
             <button>Get Started</button>
             </div>
             <img src={logo} alt="logo" width="581" height="581"></img>
