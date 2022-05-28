@@ -2,85 +2,112 @@ import React from "react";
 import * as ml5 from "ml5";
 import Webcam from "react-webcam";
 import styles from "./dashboard.css";
+import Sketch from "react-p5";
 
-const WIDTH = 500;
-const HEIGHT = 350;
+let video;
+let poseNet;
+let pose;
+let skeleton;
 
-const Users = () => {
-  const webcamRef = React.useRef(null);
-  const canvasRef = React.useRef(null);
+let brain;
+let poseLabel = "X";
 
-  React.useEffect(() => {
-    let detectionInterval;
-    const ctx = canvasRef.current.getContext("2d");
+const Dashboard = () => {
+  const setup = (p5) => {
+    p5.createCanvas(640, 480);
+    video = p5.createCapture(p5.VIDEO);
+    video.hide();
+    poseNet = ml5.poseNet(video, () => console.log("poseNet ready!"));
+    poseNet.on("pose", gotPoses);
 
-    // model load callback
-    const modelLoadedCb = () => {
-      webcamRef.current.video.width = WIDTH;
-      webcamRef.current.video.height = HEIGHT;
-      canvasRef.current.width = WIDTH;
-      canvasRef.current.height = HEIGHT;
+    let options = {
+      inputs: 34,
+      outputs: 4,
+      task: "classification",
+      debug: true,
+    };
+    brain = ml5.neuralNetwork(options);
 
-      detectionInterval = setInterval(() => {
-        detect();
-      }, 200);
+    const modelInfo = {
+      model: "https://storage.googleapis.com/bucc2022/model.json",
+      metadata: "https://storage.googleapis.com/bucc2022/model_meta.json",
+      weights: "https://storage.googleapis.com/bucc2022/model.weights.bin",
     };
 
-    /// load poseNet model
-    const poseNet = ml5.poseNet(webcamRef.current.video, modelLoadedCb);
+    brain.load(modelInfo, brainLoaded);
+  };
 
-    // detect method
-    const detect = () => {
-      if (webcamRef.current.video.readyState !== 4) {
-        console.warn("Video not ready yet");
-        return;
+  function brainLoaded() {
+    console.log("pose classification ready!");
+    classifyPose();
+  }
+
+  function classifyPose() {
+    if (pose) {
+      let inputs = [];
+      for (let i = 0; i < pose.keypoints.length; i++) {
+        let x = pose.keypoints[i].position.x;
+        let y = pose.keypoints[i].position.y;
+        inputs.push(x);
+        inputs.push(y);
       }
+      brain.classify(inputs, gotResult);
+    } else {
+      setTimeout(classifyPose, 100);
+    }
+  }
 
-      poseNet.on("pose", (results) => {
-        ctx?.clearRect(0, 0, WIDTH, HEIGHT);
-        results.forEach((pose) => {
-          if (pose?.pose?.score > 0.2) {
-            ctx.strokeStyle = "#66ff00";
-            ctx.lineWidth = 2;
+  function gotResult(error, results) {
+    if (results[0].confidence > 0.75) {
+      poseLabel = results[0].label.toUpperCase();
+    }
+    classifyPose();
+  }
 
-            for (let i = 0; i < 17; i++) {
-              ctx.beginPath();
-              ctx.arc(
-                pose.pose.keypoints[i].position.x,
-                pose.pose.keypoints[i].position.y,
-                3,
-                3,
-                3 * Math.PI
-              );
-              ctx.stroke();
-            }
-          }
-        });
-      });
-    };
+  function gotPoses(poses) {
+    if (poses.length > 0) {
+      pose = poses[0].pose;
+      skeleton = poses[0].skeleton;
+    }
+  }
 
-    return () => {
-      if (detectionInterval) {
-        clearInterval(detectionInterval);
+  const draw = (p5) => {
+    p5.push();
+    p5.translate(video.width, 0);
+    p5.scale(-1, 1);
+    p5.image(video, 0, 0, video.width, video.height);
+
+    if (pose) {
+      for (let i = 0; i < skeleton.length; i++) {
+        let a = skeleton[i][0];
+        let b = skeleton[i][1];
+        p5.strokeWeight(2);
+        p5.stroke(0);
+
+        p5.line(a.position.x, a.position.y, b.position.x, b.position.y);
       }
-    };
-  }, []);
+      for (let i = 0; i < pose.keypoints.length; i++) {
+        let x = pose.keypoints[i].position.x;
+        let y = pose.keypoints[i].position.y;
+        p5.fill(0);
+        p5.stroke(255);
+        p5.ellipse(x, y, 16, 16);
+      }
+    }
+    p5.pop();
+
+    p5.fill(255, 0, 255);
+    p5.noStroke();
+    p5.textSize(512);
+    p5.textAlign(p5.CENTER, p5.CENTER);
+    p5.text(poseLabel, p5.width / 2, p5.height / 2);
+  };
 
   return (
     <div>
-      <Webcam ref={webcamRef} width={WIDTH} height={HEIGHT} />
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: "absolute",
-          top: 12,
-          left: 12,
-          width: WIDTH,
-          height: HEIGHT,
-        }}
-      />
+      <Sketch setup={setup} draw={draw} />
     </div>
   );
 };
 
-export default Users;
+export default Dashboard;
