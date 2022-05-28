@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter, Switch, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import Users from "./pages/Users";
 
 const Routes = () => {
