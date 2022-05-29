@@ -1,0 +1,38 @@
+<svg width="156" height="158" viewBox="0 0 156 158" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.25" filter="url(#filter0_d_20_3262)">
+<circle cx="78" cy="79.0461" r="68.1234" fill="url(#paint0_linear_20_3262)"/>
+<circle cx="78" cy="79.0461" r="68.1234" fill="url(#paint1_radial_20_3262)"/>
+</g>
+<g filter="url(#filter1_f_20_3262)">
+<ellipse cx="78" cy="78.8177" rx="71" ry="71.8177" fill="url(#paint2_linear_20_3262)" fill-opacity="0.5"/>
+</g>
+<defs>
+<filter id="filter0_d_20_3262" x="8.83056" y="10.9227" width="138.339" height="138.339" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="1.04604"/>
+<feGaussianBlur stdDeviation="0.52302"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20_3262"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20_3262" result="shape"/>
+</filter>
+<filter id="filter1_f_20_3262" x="0.186181" y="0.186181" width="155.628" height="157.263" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="3.40691" result="effect1_foregroundBlur_20_3262"/>
+</filter>
+<linearGradient id="paint0_linear_20_3262" x1="78" y1="10.9227" x2="78" y2="147.17" gradientUnits="userSpaceOnUse">
+<stop stop-color="#09CC96"/>
+<stop offset="1" stop-color="#1774CF"/>
+</linearGradient>
+<radialGradient id="paint1_radial_20_3262" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(40.8418 54.274) rotate(41.3555) scale(102.062)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="paint2_linear_20_3262" x1="7" y1="78.8177" x2="148.92" y2="82.1776" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1484C5"/>
+<stop offset="1" stop-color="#09CC96"/>
+</linearGradient>
+</defs>
+</svg>
