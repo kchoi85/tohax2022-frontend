@@ -1,12 +1,13 @@
 import Routes from "./Routes";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Landing from "./pages/Landing/landing"
+import Problem from "./pages/Problem/problem";
+
 
 function App() {
   return (
     <BrowserRouter>
-    <Landing />
       <Routes />
+      
     </BrowserRouter>
 
 

@@ -1,0 +1,34 @@
+.problem{
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.article{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    margin-left: 15vw;
+}
+
+.description h2{
+    width: 40vw;
+    color: white;
+}
+
+.description h1{
+    color: white;
+}
