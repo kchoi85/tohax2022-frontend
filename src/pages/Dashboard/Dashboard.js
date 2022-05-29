@@ -26,12 +26,7 @@ const Dashboard = () => {
         <div className="left">
           <span style={{ fontSize: "5rem" }}>SlüchAnalytics</span>
           <div className="leftText">
-            <span
-              style={{
-                fontSize: "1.5rem",
-                lineHeight: "1.5",
-              }}
-            >
+            <span className="leftDescription">
               Monitors and identifies if you are slouching. SlouchAnalytics will
               send a notification to alert you.
             </span>
@@ -39,7 +34,7 @@ const Dashboard = () => {
           <div className="buttonWrapper">
             <button
               className="button"
-              onClick={() => history.go("/cam_config")}
+              onClick={() => history.push("/cam_config")}
             >
               <span>Get Started</span>
             </button>

@@ -43,6 +43,11 @@ span {
   width: 80%;
 }
 
+.leftDescription {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
 .buttonWrapper {
   padding-top: 80px;
   width: 80%;
@@ -54,6 +59,8 @@ span {
   border-radius: 30px;
   border: none;
   cursor: pointer;
+  -webkit-box-shadow: -7px 5px 15px 16px rgba(0, 0, 0, 0.63);
+  box-shadow: -7px 5px 15px 16px rgba(0, 0, 0, 0.63);
 }
 
 .line {

@@ -1,0 +1,69 @@
+.connecting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.headerText {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.camWrapper {
+  padding-top: 30px;
+  width: 100%;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+}
+
+.cam {
+  border-radius: 20px;
+  -webkit-box-shadow: -7px 5px 15px 16px rgba(0, 0, 0, 0.63);
+  box-shadow: -7px 5px 15px 16px rgba(0, 0, 0, 0.63);
+}
+
+.dropdownWrapper {
+  width: 100% !important;
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.dropdown1 {
+  cursor: pointer;
+  color: white;
+  font-size: 1.1rem;
+  font-family: "Quicksand", sans-serif;
+  padding: 11px 220px;
+  text-align: center;
+  background: linear-gradient(45deg, #1774cf, #09cc96);
+  border: none;
+  border-radius: 20px;
+  -webkit-box-shadow: -7px 5px 15px 16px rgba(0, 0, 0, 0.23);
+}
+
+.dropdown2 {
+  cursor: pointer;
+  color: white;
+  font-size: 1.1rem;
+  font-family: "Quicksand", sans-serif;
+  padding: 10px 214px;
+  text-align: center;
+  background: linear-gradient(45deg, #1774cf, #09cc96);
+  border: none;
+  border-radius: 20px;
+  box-shadow: -7px 5px 15px 16px rgba(0, 0, 0, 0.23);
+}
+
+.d2Text {
+  width: 100% !important;
+  color: black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
