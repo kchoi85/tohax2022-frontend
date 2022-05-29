@@ -27,17 +27,26 @@ const Dashboard = () => {
           <span style={{ fontSize: "5rem" }}>SlüchAnalytics</span>
           <div className="leftText">
             <span className="leftDescription">
-              Monitors and identifies if you are slouching. SlouchAnalytics will
-              send a notification to alert you.
+              <span style={{ fontWeight: "bold", fontSize: "1.6rem" }}>AI</span>{" "}
+              companion that monitors and identifies if you are slouching.
+              <span style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
+                {" "}
+                SlouchAnalytics
+              </span>{" "}
+              will send a notification to alert you.
             </span>
           </div>
           <div className="buttonWrapper">
             <button
-              className="button"
-              onClick={() => history.push("/cam_config")}
+              className="button1"
+              onClick={() => {
+                history.push("/cam_config");
+                window.location.reload();
+              }}
             >
               <span>Get Started</span>
             </button>
+
             <div className="line">
               <Line />
             </div>

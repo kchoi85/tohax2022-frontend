@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .headerText {
@@ -66,4 +66,18 @@
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.btnConnect {
+  padding: 10px 40px;
+  background: linear-gradient(45deg, #1774cf, #09cc96);
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
 }

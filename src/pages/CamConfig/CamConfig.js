@@ -2,8 +2,10 @@ import React from "react";
 import BackSVG from "./Config.svg";
 import "./camconfig.css";
 import Webcam from "react-webcam";
+import { useHistory } from "react-router-dom";
 
 const CamConfig = () => {
+  const history = useHistory();
   return (
     <div
       style={{
@@ -44,6 +46,17 @@ const CamConfig = () => {
             Above right of monitor
           </option>
         </select>
+      </div>
+      <div className="btnWrap">
+        <button
+          className="btnConnect"
+          onClick={() => {
+            history.push("/cam");
+            window.location.reload();
+          }}
+        >
+          <span>Start</span>
+        </button>
       </div>
     </div>
   );

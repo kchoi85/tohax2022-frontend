@@ -1,0 +1,31 @@
+.headerCam {
+  padding: 35px 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bell {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 24px;
+  cursor: pointer;
+}
+
+.icon {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CamContent {
+  padding: 35px 55px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
