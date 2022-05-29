@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Users from "./pages/Users";
 import Landing from "./pages/Landing/landing"
 import Problem from "./pages/Problem/problem";
+import Login from "./pages/Login/login";
 
 const Routes = () => {
   return (
