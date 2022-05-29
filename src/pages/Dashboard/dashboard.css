@@ -1,7 +1,65 @@
-.canvasLayover {
-  position: absolute;
-  left: 12;
-  top: 12;
-  width: 500;
-  height: 350;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+span {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header {
+  padding: 35px 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  display: flex;
+  color: white;
+  gap: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left {
+  padding-left: 10%;
+  padding-top: 8%;
+}
+
+.leftText {
+  padding-top: 20px;
+  width: 80%;
+}
+
+.buttonWrapper {
+  padding-top: 80px;
+  width: 80%;
+}
+
+.button {
+  padding: 15px 80px;
+  background: linear-gradient(45deg, #1774cf, #09cc96);
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.line {
+  padding-top: 30px;
+}
+
+.right {
+  margin-right: -25%;
 }
