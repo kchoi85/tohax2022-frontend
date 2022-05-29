@@ -1,13 +1,13 @@
 import Routes from "./Routes";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Login from "./pages/Login/login";
+import Benefits from "./pages/Benefits/benefits";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes />
-      <Login />
+      <Benefits />
       
     </BrowserRouter>
 

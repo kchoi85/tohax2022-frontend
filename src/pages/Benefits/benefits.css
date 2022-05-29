@@ -1,0 +1,42 @@
+.headings{
+    
+        height: 92vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 90vh;
+        
+
+}
+
+.list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+
+.headings h1{
+    color:white;
+    font-size: 4rem;
+    margin-top: 15vh;
+    
+
+}
+
+.headings li{
+    color: white;
+    font-size: 1.6rem;
+    margin-right: 15vw;
+    width: 25vw;
+}
+
+    
+        
+        
+    
